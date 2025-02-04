@@ -199,14 +199,20 @@ If a single device ID is handling many high-value transactions, it could indicat
 
 ### 5.2 Machine Learning Models
 
-| Model                                | Precision | Recall   | F1-Score | AUC-ROC  |
-| ------------------------------------ | --------- | -------- | -------- | -------- |
-| Logistic Regression                  | 0.62      | 0.45     | 0.52     | 0.74     |
-| Random Forest                        | **0.78**  | 0.71     | 0.74     | 0.86     |
-| XGBoost                              | **0.82**  | **0.76** | **0.79** | **0.90** |
-| Isolation Forest (Anomaly Detection) | 0.68      | **0.83** | 0.74     | 0.81     |
+Detecting Total Potential Frauds | K-means Clustering
+![image](https://github.com/user-attachments/assets/a70efd36-03f1-4cea-9439-4df37f13a9c0)
+![image](https://github.com/user-attachments/assets/74347567-ce75-4716-a008-96abea6c8b43)
 
-**XGBoost achieved the highest precision and recall balance, making it the best-performing model for fraud detection.**
+DBSCAN Clustering on Transactions
+![image](https://github.com/user-attachments/assets/decde02f-8734-4485-aba7-f9ec21e98fda)
+
+#### Hierarchical Clustering on Transactions¶
+![image](https://github.com/user-attachments/assets/414b2976-1ee0-40f4-9f09-41f6c8af8faf)
+
+
+#### Isolation Forest for Anomaly Detection
+![image](https://github.com/user-attachments/assets/e9cb89c0-a656-4784-8396-2eeea84010d2)
+
 
 More details are available in the [Model Training Notebook](https://github.com/sukumar-govindraj/Bank_Transaction_Fraud_Detection/blob/main/bank-transaction-eda-for-fraud-detection.ipynb).
 
