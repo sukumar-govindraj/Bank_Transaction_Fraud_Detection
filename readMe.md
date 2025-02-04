@@ -52,87 +52,102 @@ The dataset used for this analysis contains **simulated banking transactions**, 
 
 ---
 ## EDA And Key take aways:
-1. Histograms of Transaction Amounts
-![image](https://github.com/user-attachments/assets/6f9732eb-e09e-4d89-92e1-86563097d6e7)
 
-Key Insights:
+# Transaction Amount Distribution (Histogram)
+![image](https://github.com/user-attachments/assets/24050d9a-882f-45f4-93b2-e99cb71deb68)
 
-The majority of transactions are concentrated at lower amounts, following a right-skewed distribution.
+Key Insight: 
+Most transactions are of lower amounts, with a few high-value transactions, indicating a right-skewed distribution.
+Potential fraud indicators might be in outliers (high-value transactions). Sudden spikes in high transaction amounts should be analyzed further.
 
-Debit transactions are more frequent than credit transactions, especially for smaller amounts.
+# Top 10 Locations by Transaction Volume (Bar Chart)
+![image](https://github.com/user-attachments/assets/8e465240-40f2-4d57-8b71-1e79efe5f7ca)
 
-Larger transactions appear less frequently but might be more relevant for fraud detection.
+Key Insight: 
+The majority of transactions come from specific locations.
+High transaction density in certain locations could indicate business hubs or areas prone to fraudulent activities.
+
+# Transaction Type Breakdown (Pie Chart)
+![image](https://github.com/user-attachments/assets/d7dbd6ba-06cf-407b-812b-eb76d9464e67)
+
+Key Insight: 
+Debit transactions dominate over credit transactions.
+If credit transactions are unusually low, this could indicate customer preference, fraud patterns, or a financial institution policy bias.
+
+# Transactions Over Time (Line Chart)
+![image](https://github.com/user-attachments/assets/dcba22f5-5e6c-4823-b302-30bc5653309a)
+
+Key Insight: 
+A pattern in transaction frequency over months.
+Seasonal trends could be used to detect anomalies. If a sudden drop or spike appears, it could indicate system downtimes or fraud attempts.
+
+# Customer Age Distribution (Histogram)
+![image](https://github.com/user-attachments/assets/920f7f67-1b72-4a77-8b7d-8832e77b7ee5)
+
+Key Insight: 
+A mix of young and old users, but certain age groups dominate.
+Younger customers may prefer online transactions, while older ones may rely on ATMs. Identifying unusual transaction behaviors per age group can aid fraud detection.
+
+# Account Balance vs. Transaction Amount (Scatter Plot)
+![image](https://github.com/user-attachments/assets/0da6110c-7275-4470-a576-201b7c65c6b0)
+
+Key Insight: No clear correlation, but higher transaction amounts might cluster in higher account balances.
+Deep Dive: Customers with low balances making high-value transactions should be flagged for potential overdrafts or fraud.
+
+# Transaction Channel Distribution (Bar Chart)
+![image](https://github.com/user-attachments/assets/c90d3931-1366-49d1-a5b9-a3406cf70a9e)
+
+Key Insight: Online transactions may be more frequent than ATM or other channels.
+Deep Dive: Fraudulent activities are often concentrated in certain transaction channels (e.g., online fraud being higher due to cyber risks).
+
+# Transaction Amount by Transaction Type (Box Plot)
+![image](https://github.com/user-attachments/assets/3f1bde7c-d8eb-46bd-9a5f-dca6f3c23e7a)
+
+Key Insight: 
+Debit transactions may have higher variations compared to credit transactions.
+If high-value transactions are mostly debit, it could indicate unauthorized or large fund transfers.
+
+# Login Attempts Distribution (Histogram)
+![image](https://github.com/user-attachments/assets/a4af1094-9569-4c06-bdc3-789acfe43e9e)
+
+Key Insight: 
+Most transactions happen with a single login attempt, but multiple attempts are present.
+Unusual spikes in login attempts could indicate brute force attacks or fraudulent access.
+
+# Transaction Duration Distribution (Histogram)
+![image](https://github.com/user-attachments/assets/53cdf997-d9be-4810-844e-503089a0188f)
+
+Key Insight: Most transactions complete within a specific time range.
+Deep Dive: Longer transaction durations could indicate manual interventions or suspicious activities.
+
+# Transaction Amount vs. Transaction Duration (Scatter Plot)
+![image](https://github.com/user-attachments/assets/92b877bd-5036-474b-ae76-de31a1a0dee1)
+
+Key Insight: 
+No strong correlation, but outliers exist.
+Large transactions with long durations could be high-risk or fraudulent transactions.
 
 
+# Customer Age vs. Transaction Amount (Scatter Plot)
+![image](https://github.com/user-attachments/assets/0a427ece-6f9a-4ce8-a0ff-abf4b916f6f7)
 
-2. Box Plot of Transaction Amounts
-   ![image](https://github.com/user-attachments/assets/580179ac-520b-4782-bb3f-55368f701bdb)
+Key Insight: 
+Younger customers might have more high-value transactions than expected.
+If high transaction amounts come from unusual age groups, it could indicate shared accounts or fraud.
 
+# Most Frequent Merchants (Bar Chart)
+![image](https://github.com/user-attachments/assets/2520ee86-5f6e-4f13-a826-09033eb9adf5)
 
-Key Insights:
+Key Insight: 
+A few merchants dominate transactions.
+Certain merchants might attract fraudulent activities due to their popularity.
 
-A significant number of transactions are outliers, with amounts well above the interquartile range (IQR).
+# Most Common Devices Used for Transactions (Bar Chart)
+![image](https://github.com/user-attachments/assets/a3da12dc-c73d-4e5c-afc1-1c4ce2febd6a)
 
-Most transactions fall within $0 - $500, while high-value transactions are sparse but could be critical for anomaly detection.
-
-
-
-3. Transaction Distribution Across Locations
-   ![image](https://github.com/user-attachments/assets/28fa5ad3-7703-4982-8af8-ed82044617a6)
-
-
-Key Insights:
-
-Transactions are evenly distributed across major cities, with some locations showing a slightly higher number of transactions.
-
-Fort Worth, Los Angeles, and Oklahoma City have the highest number of recorded transactions, which might be indicative of higher economic activity in those areas.
-
-
-
-4. Daily Transaction Patterns
-   ![image](https://github.com/user-attachments/assets/bcd6a07b-d3fc-49ed-b8e5-e419de95ebfa)
-
-
-Key Insights:
-
-Transactions fluctuate daily, with spikes occurring periodically, possibly due to payroll dates, bill payments, or spending trends.
-
-Identifying peak transaction times can help detect fraudulent activities occurring outside normal patterns.
-
-
-
-5. Transaction Frequency by Day of the Week
-   ![image](https://github.com/user-attachments/assets/366426bf-f588-45e2-ba2e-de440d61bb93)
-
-
-Key Insights:
-
-Monday experiences the highest number of transactions, while weekends have the least activity.
-
-Businesses and payroll cycles might influence transaction behaviors, making specific days more prone to financial fraud attempts.
-
-
-
-6. Transaction Frequency by Hour of the Day
-![image](https://github.com/user-attachments/assets/a9e37aff-22e3-4280-9087-b50bd4401b76)
-
-Key Insights:
-
-The busiest transaction periods occur during business hours, especially around 16:00 and 17:00, possibly due to salary credits or end-of-day banking.
-
-A secondary peak in the evening could relate to online transactions, bill payments, or after-work spending.
-
-
-
-7. Distribution of Time Gaps Between Transactions
-![image](https://github.com/user-attachments/assets/2d7d8e34-7b7a-4a2d-880d-c992b5c7aeeb)
-
-Key Insights:
-
-The time gap between transactions follows an almost uniform pattern, with certain spikes indicating batch transactions (e.g., payrolls, stock trades, or scheduled payments).
-
-Debit and credit transactions exhibit different time-based distributions, which could be useful for fraud detection.
-
+Key Insight: 
+Some devices are used significantly more than others.
+If a single device ID is handling many high-value transactions, it could indicate a compromised device or fraud.
 
 ## 3. Executive Summary
 
