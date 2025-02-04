@@ -33,6 +33,7 @@ The dataset used for this analysis contains **simulated banking transactions**, 
 
 #### **Transactions Data (`transactions.csv`)**
 
+
 | Column Name        | Description                                                       |
 | ------------------ | ----------------------------------------------------------------- |
 | `transaction_id`   | Unique identifier for each transaction.                           |
@@ -45,7 +46,91 @@ The dataset used for this analysis contains **simulated banking transactions**, 
 | `location`         | Geographical location where the transaction occurred.             |
 | `is_fraud`         | Indicator if the transaction is fraudulent (1) or legitimate (0). |
 
+![image](https://github.com/user-attachments/assets/f72d9766-973a-422c-875b-685db3cafc08)
+
 ---
+## EDA And Key take aways:
+1. Histograms of Transaction Amounts
+![image](https://github.com/user-attachments/assets/6f9732eb-e09e-4d89-92e1-86563097d6e7)
+
+Key Insights:
+
+The majority of transactions are concentrated at lower amounts, following a right-skewed distribution.
+
+Debit transactions are more frequent than credit transactions, especially for smaller amounts.
+
+Larger transactions appear less frequently but might be more relevant for fraud detection.
+
+
+
+2. Box Plot of Transaction Amounts
+   ![image](https://github.com/user-attachments/assets/580179ac-520b-4782-bb3f-55368f701bdb)
+
+
+Key Insights:
+
+A significant number of transactions are outliers, with amounts well above the interquartile range (IQR).
+
+Most transactions fall within $0 - $500, while high-value transactions are sparse but could be critical for anomaly detection.
+
+
+
+3. Transaction Distribution Across Locations
+   ![image](https://github.com/user-attachments/assets/28fa5ad3-7703-4982-8af8-ed82044617a6)
+
+
+Key Insights:
+
+Transactions are evenly distributed across major cities, with some locations showing a slightly higher number of transactions.
+
+Fort Worth, Los Angeles, and Oklahoma City have the highest number of recorded transactions, which might be indicative of higher economic activity in those areas.
+
+
+
+4. Daily Transaction Patterns
+   ![image](https://github.com/user-attachments/assets/bcd6a07b-d3fc-49ed-b8e5-e419de95ebfa)
+
+
+Key Insights:
+
+Transactions fluctuate daily, with spikes occurring periodically, possibly due to payroll dates, bill payments, or spending trends.
+
+Identifying peak transaction times can help detect fraudulent activities occurring outside normal patterns.
+
+
+
+5. Transaction Frequency by Day of the Week
+   ![image](https://github.com/user-attachments/assets/366426bf-f588-45e2-ba2e-de440d61bb93)
+
+
+Key Insights:
+
+Monday experiences the highest number of transactions, while weekends have the least activity.
+
+Businesses and payroll cycles might influence transaction behaviors, making specific days more prone to financial fraud attempts.
+
+
+
+6. Transaction Frequency by Hour of the Day
+![image](https://github.com/user-attachments/assets/a9e37aff-22e3-4280-9087-b50bd4401b76)
+
+Key Insights:
+
+The busiest transaction periods occur during business hours, especially around 16:00 and 17:00, possibly due to salary credits or end-of-day banking.
+
+A secondary peak in the evening could relate to online transactions, bill payments, or after-work spending.
+
+
+
+7. Distribution of Time Gaps Between Transactions
+![image](https://github.com/user-attachments/assets/2d7d8e34-7b7a-4a2d-880d-c992b5c7aeeb)
+
+Key Insights:
+
+The time gap between transactions follows an almost uniform pattern, with certain spikes indicating batch transactions (e.g., payrolls, stock trades, or scheduled payments).
+
+Debit and credit transactions exhibit different time-based distributions, which could be useful for fraud detection.
+
 
 ## 3. Executive Summary
 
