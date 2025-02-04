@@ -1,4 +1,6 @@
-# Fraudulent Transaction Analysis and Risk Assessment Report
+# Risk Assessment and Fraudulent Transaction Analysis Report on Bank Transaction Data
+![image](https://github.com/user-attachments/assets/94a9b043-a744-475b-89ce-a60d858a74ef)
+
 
 ## 1. Introduction
 
