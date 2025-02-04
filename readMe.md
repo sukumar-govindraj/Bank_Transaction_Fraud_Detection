@@ -208,7 +208,7 @@ If a single device ID is handling many high-value transactions, it could indicat
 
 **XGBoost achieved the highest precision and recall balance, making it the best-performing model for fraud detection.**
 
-More details are available in the [Model Training Notebook](notebooks/model_training.ipynb).
+More details are available in the [Model Training Notebook](https://github.com/sukumar-govindraj/Bank_Transaction_Fraud_Detection/blob/main/bank-transaction-eda-for-fraud-detection.ipynb).
 
 ---
 
